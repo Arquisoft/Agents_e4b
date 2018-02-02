@@ -16,7 +16,7 @@ Skeleton of agents module
 # Modifications
 - Sergio Muñiz Rosas (UO245346)
 - Darío Alonso Díaz (UO237089)
--
+- Francisco Manuel Mendoza Soto (UO251129)
 -
 
 
