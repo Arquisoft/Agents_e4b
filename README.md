@@ -3,7 +3,7 @@
 # Agents_e4b
 
 
-Skeleton of participants module
+Skeleton of agents module
 
 # Authors
 
