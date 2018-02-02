@@ -2,7 +2,6 @@
 
 # Agents_e4b
 
-[![Join the chat at https://gitter.im/Arquisoft/participants1a](https://badges.gitter.im/Arquisoft/participants1a.svg)](https://gitter.im/Arquisoft/participants1a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Skeleton of participants module
 
@@ -12,6 +11,8 @@ Skeleton of participants module
 - Martín Peláez Díaz (UO236974)
 - Laura Menéndez Pérez (UO244646)
 - Fernando Palazuelo Ginzo (UO244588)
+
+# Modifications
 
 
 Usuarios de prueba para la aplicación:
