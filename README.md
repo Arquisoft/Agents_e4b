@@ -13,6 +13,10 @@ Skeleton of agents module
 - Fernando Palazuelo Ginzo (UO244588)
 
 # Modifications
+- Sergio Muñiz Rosas (UO245346)
+-
+-
+-
 
 
 Usuarios de prueba para la aplicación:
