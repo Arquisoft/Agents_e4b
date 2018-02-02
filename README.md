@@ -2,6 +2,7 @@
 
 # Agents_e4b
 
+[![Build Status](https://travis-ci.org/Arquisoft/Agents_e4b.svg?branch=master)](https://travis-ci.org/Arquisoft/Agents_e4b)
 
 Skeleton of agents module
 
