@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Participant")
-public class Participant {
+public class Agent {
 
 	// Id generado automáticamente para diferenciar cada uno (para mapear)
 	@Id
@@ -25,9 +25,12 @@ public class Participant {
 	@Column(unique = true)
 	private String email;
 	@Column(unique = true)
-	private String DNI;
+	private String identificador;
 	private String direccion;
 	private String nacionalidad;
+	
+	private String kind;
+	private int kindCode;
 
 	private boolean isAdmin;
 	private boolean isPolitician;
@@ -35,11 +38,11 @@ public class Participant {
 	/**
 	 * Constructor vacío (ya que es para mapear)
 	 */
-	Participant() {
+	Agent() {
 	}
 
 	/**
-	 * Constructor
+	 * Constructor año pasado en el se construyen agentes de tipo persona, no tienen el campo tipo ni codigo de tipo
 	 * 
 	 * @param nombre
 	 * @param apellidos
@@ -50,7 +53,7 @@ public class Participant {
 	 * @param direccion
 	 * @param nacionalidad
 	 */
-	public Participant(String nombre, String apellidos, String password, Date fechaNacimiento, String email, String dNI,
+	public Agent(String nombre, String apellidos, String password, Date fechaNacimiento, String email, String dNI,
 			String direccion, String nacionalidad, boolean isAdmin, boolean isPolitician) {
 		super();
 		this.nombre = nombre;
@@ -58,12 +61,36 @@ public class Participant {
 		this.password = password;
 		this.fechaNacimiento = fechaNacimiento;
 		this.email = email;
-		this.DNI = dNI;
+		this.identificador = dNI;
 		this.direccion = direccion;
 		this.nacionalidad = nacionalidad;
 		this.isAdmin = isAdmin;
 		this.isPolitician = isPolitician;
 	}
+	/**
+	 * 
+	 * @param nombre
+	 * @param apellidos
+	 * @param password
+	 * @param email
+	 * @param ID tambien puede tomarse como el DNI para las personas
+	 * @param direccion
+	 * @param kind
+	 * @param kindCode
+	 */
+	public Agent(String nombre, String password, String email, String ID,
+			String direccion, String kind, int kindCode) {
+		super();
+		this.nombre = nombre; //El nombre va en conjunto con los apellidos
+		this.password = password;
+		this.email = email;
+		this.identificador = ID;
+		this.direccion = direccion;
+
+		
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -98,7 +125,7 @@ public class Participant {
 	}
 
 	public String getDNI() {
-		return DNI;
+		return identificador;
 	}
 
 	public String getDireccion() {
@@ -125,6 +152,14 @@ public class Participant {
 		this.isPolitician = isPolitician;
 	}
 
+	public String getKind() {
+		return kind;
+	}
+
+	public int getKindCode() {
+		return kindCode;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -141,7 +176,7 @@ public class Participant {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Participant other = (Participant) obj;
+		Agent other = (Agent) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -152,7 +187,7 @@ public class Participant {
 
 	@Override
 	public String toString() {
-		return "Participant [nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", email=" + email + ", DNI=" + DNI + ", direccion="
+		return "Participant [nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", email=" + email + ", DNI=" + identificador + ", direccion="
 				+ direccion + ", nacionalidad=" + nacionalidad + ", isAdmin=" + isAdmin + ", isPolitician="
 				+ isPolitician + "]";
 	}

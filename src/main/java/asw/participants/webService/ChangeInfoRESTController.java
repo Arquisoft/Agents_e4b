@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import asw.dbManagement.GetParticipant;
 import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.participants.ChangeInfo;
 import asw.participants.util.Assert;
 import asw.participants.webService.request.PeticionChangeEmailREST;
@@ -44,7 +44,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 		
 		Assert.isSamePassword(password, newPassword);	
 
-		Participant p = getParticipant.getParticipant(email);
+		Agent p = getParticipant.getParticipant(email);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -72,7 +72,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Participant p = getParticipant.getParticipant(email);
+		Agent p = getParticipant.getParticipant(email);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 		

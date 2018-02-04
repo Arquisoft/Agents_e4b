@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import asw.dbManagement.GetParticipant;
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.participants.util.Assert;
 import asw.participants.util.Utilidades;
 import asw.participants.webService.responses.errors.ErrorResponse;
@@ -37,7 +37,7 @@ public class GetParticipantInfoHTMLController {
 		Assert.isEmailValid(email);
 		Assert.isPasswordEmpty(password);
 
-		Participant participant = getParticipant.getParticipant(email);
+		Agent participant = getParticipant.getParticipant(email);
 
 		Assert.isParticipantNull(participant);
 		Assert.isPasswordCorrect(password, participant);
