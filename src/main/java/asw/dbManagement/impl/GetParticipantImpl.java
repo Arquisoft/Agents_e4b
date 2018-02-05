@@ -20,13 +20,13 @@ public class GetParticipantImpl implements GetParticipant {
 	
 	
 	/**
-	 * Método que devuelve el Participante buscado por email
-	 * Hace uso del método findByEmail (mapeador)
+	 * Método que devuelve el Agente buscado por identificador
+	 * Hace uso del método findByIdentificador (mapeador)
 	 */
 	@Override
-	public Agent getParticipant(String email) {
+	public Agent getParticipant(String identificador) {
 		
-		return this.repository.findByEmail(email);
+		return this.repository.findByIdentificador(identificador);
 	}
 
 }

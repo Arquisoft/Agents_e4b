@@ -22,18 +22,17 @@ public class Agent {
 	private String apellidos;
 	private String password;
 	private Date fechaNacimiento;
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String email;
 	@Column(unique = true)
 	private String identificador;
 	private String direccion;
-	private String nacionalidad;
 	
 	private String kind;
 	private int kindCode;
 
-	private boolean isAdmin;
-	private boolean isPolitician;
+
+
 
 	/**
 	 * Constructor vacío (ya que es para mapear)
@@ -53,20 +52,20 @@ public class Agent {
 	 * @param direccion
 	 * @param nacionalidad
 	 */
-	public Agent(String nombre, String apellidos, String password, Date fechaNacimiento, String email, String dNI,
-			String direccion, String nacionalidad, boolean isAdmin, boolean isPolitician) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.password = password;
-		this.fechaNacimiento = fechaNacimiento;
-		this.email = email;
-		this.identificador = dNI;
-		this.direccion = direccion;
-		this.nacionalidad = nacionalidad;
-		this.isAdmin = isAdmin;
-		this.isPolitician = isPolitician;
-	}
+//	public Agent(String nombre, String apellidos, String password, Date fechaNacimiento, String email, String dNI,
+//			String direccion, String nacionalidad, boolean isAdmin, boolean isPolitician) {
+//		super();
+//		this.nombre = nombre;
+//		this.apellidos = apellidos;
+//		this.password = password;
+//		this.fechaNacimiento = fechaNacimiento;
+//		this.email = email;
+//		this.identificador = dNI;
+//		this.direccion = direccion;
+//		this.nacionalidad = nacionalidad;
+//		this.isAdmin = isAdmin;
+//		this.isPolitician = isPolitician;
+//	}
 	/**
 	 * 
 	 * @param nombre
@@ -78,14 +77,16 @@ public class Agent {
 	 * @param kind
 	 * @param kindCode
 	 */
-	public Agent(String nombre, String password, String email, String ID,
+	public Agent(String nombre, String password, String email, String identificador,
 			String direccion, String kind, int kindCode) {
 		super();
 		this.nombre = nombre; //El nombre va en conjunto con los apellidos
 		this.password = password;
 		this.email = email;
-		this.identificador = ID;
+		this.identificador = identificador;
 		this.direccion = direccion;
+		this.kindCode = kindCode;
+		this.kind = kind;
 
 		
 	}
@@ -124,7 +125,7 @@ public class Agent {
 		this.email = email;
 	}
 
-	public String getDNI() {
+	public String getIdentificador() {
 		return identificador;
 	}
 
@@ -132,25 +133,6 @@ public class Agent {
 		return direccion;
 	}
 
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-
-	public boolean isAdmin() {
-		return isAdmin;
-	}
-
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
-	}
-
-	public boolean isPolitician() {
-		return isPolitician;
-	}
-
-	public void setPolitician(boolean isPolitician) {
-		this.isPolitician = isPolitician;
-	}
 
 	public String getKind() {
 		return kind;
@@ -187,9 +169,10 @@ public class Agent {
 
 	@Override
 	public String toString() {
-		return "Participant [nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", email=" + email + ", DNI=" + identificador + ", direccion="
-				+ direccion + ", nacionalidad=" + nacionalidad + ", isAdmin=" + isAdmin + ", isPolitician="
-				+ isPolitician + "]";
+		return "Agent [id=" + id + ", nombre=" + nombre + ", password=" + password + ", email=" + email
+				+ ", identificador=" + identificador + ", direccion=" + direccion + ", kind=" + kind + ", kindCode="
+				+ kindCode + "]";
 	}
+
 
 }

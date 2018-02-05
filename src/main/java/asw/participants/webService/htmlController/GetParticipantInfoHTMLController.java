@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import asw.dbManagement.GetParticipant;
 import asw.dbManagement.model.Agent;
 import asw.participants.util.Assert;
-import asw.participants.util.Utilidades;
 import asw.participants.webService.responses.errors.ErrorResponse;
 
 @Controller
@@ -30,29 +29,23 @@ public class GetParticipantInfoHTMLController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getLogin(HttpSession session, @RequestParam String email, @RequestParam String password,
+	public String getLogin(HttpSession session, @RequestParam String userid, @RequestParam String password,@RequestParam String kind,
 			Model model) {
 
-		Assert.isEmailEmpty(email);
-		Assert.isEmailValid(email);
+		Assert.isUserIdEmpty(userid);
+		//Assert.isEmailValid(email);
 		Assert.isPasswordEmpty(password);
+		Assert.isKindEmpty(kind);
 
-		Agent participant = getParticipant.getParticipant(email);
+		Agent agent = getParticipant.getParticipant(userid);
 
-		Assert.isParticipantNull(participant);
-		Assert.isPasswordCorrect(password, participant);
+		Assert.isParticipantNull(agent);
+		Assert.isPasswordCorrect(password, agent);
 
-		session.setAttribute("participant", participant);
+		session.setAttribute("agent", agent);
 
-		if (!participant.isAdmin() && !participant.isPolitician()) {
-			session.setAttribute("edad", Utilidades.getEdad(participant.getFechaNacimiento()));
-			return "datosParticipant";
-		} else{
-			if(participant.isAdmin())
-				return "dashboardAdmin";
-			else
-				return "dashboardPolitician";
-		}
+		return "datosParticipant";
+	
 
 	}
 

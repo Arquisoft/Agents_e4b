@@ -6,7 +6,7 @@ public interface GetParticipant {
 	/**
 	 * Permite la solicitud la de información para el usuario.
 	 */
-	public Agent getParticipant(String email);
+	public Agent getParticipant(String identificador);
 	
 	
 	

@@ -74,4 +74,19 @@ public class Assert {
 		}
 		return true;
 	}
+	
+	public static boolean isUserIdEmpty(String userId) {
+		if(userId.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_USERID);
+		else
+			return false;
+	}
+	
+	public static boolean isKindEmpty(String kind) {
+		if(kind.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_KIND);
+		else
+			return false;
+	}
+
 }

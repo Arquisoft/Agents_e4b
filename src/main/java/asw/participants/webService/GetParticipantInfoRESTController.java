@@ -29,9 +29,11 @@ public class GetParticipantInfoRESTController implements GetParticipantInfo {
 			"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaInfoREST> getPOSTpetition(@RequestBody(required = true) PeticionInfoREST peticion) {
 
-		Assert.isEmailEmpty(peticion.getLogin());
-		Assert.isEmailValid(peticion.getLogin());
+		Assert.isUserIdEmpty(peticion.getLogin());
+	//	Assert.isEmailValid(peticion.getLogin());
 		Assert.isPasswordEmpty(peticion.getPassword());
+		
+		Assert.isKindEmpty(peticion.getTipoAgente());
 
 		Agent participant = getParticipant.getParticipant(peticion.getLogin());
 
