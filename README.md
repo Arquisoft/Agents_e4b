@@ -17,7 +17,7 @@ Skeleton of agents module
 - Sergio Muñiz Rosas (UO245346)
 - Darío Alonso Díaz (UO237089)
 - Francisco Manuel Mendoza Soto (UO251129)
--
+- Victor David Acebes Caballo (UO251117)
 
 
 Usuarios de prueba para la aplicación:
