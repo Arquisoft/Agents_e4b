@@ -9,15 +9,18 @@
 <h1>Datos personales</h1>
 	<form method="POST" action="confirmEmail" >
 		<label for="email"><strong>Correo:</strong> </label>
-		<input type="text" name="email" th:value="${session.participant.email}"/>
+		<input type="text" name="email" th:value="${session.agent.email}"/>
 		<input type="submit" name="cambiarEmail" value="Cambiar email"/>
 	</form>
 	
-	<p><strong>Nombre:</strong> <span th:text="${session.participant.nombre}"></span></p>
-	<p><strong>Apellidos:</strong> <span th:text="${session.participant.apellidos}"></span></p>
-	<p><strong>DNI:</strong> <span th:text="${session.participant.DNI}"></span></p>
-	<p><strong>Edad:</strong> <span th:text="${session.edad}"></span></p>
-	<p><strong>Direccion:</strong> <span th:text="${session.participant.direccion}"></span></p>
+	<p><strong>Nombre:</strong> <span th:text="${session.agent.nombre}"></span></p>
+	<p><strong>Identificador:</strong> <span th:text="${session.agent.DNI}"></span></p>
+	<p><strong>Direccion:</strong> <span th:text="${session.agent.direccion}"></span></p>
+	<p><strong>Email:</strong> <span th:text="${session.agent.email}"></span></p>
+	<p><strong>Kind:</strong> <span th:text="${session.agent.kind}"></span></p>
+	<p><strong>KindCode:</strong> <span th:text="${session.agent.kindCode}"></span></p>
+		
+	
 	
 	<i><span th:if="${info != null}" th:text="${info}">Info</span></i>
 	

@@ -4,7 +4,7 @@ public class PeticionInfoREST {
 
 	private String login;
 	private String password;
-	private String tipoAgente;
+	private String kind;
 
 	public void setLogin(String login) {
 		this.login = login;
@@ -26,7 +26,7 @@ public class PeticionInfoREST {
 	public PeticionInfoREST(String login, String password, String tipoAgente){
 		this.login = login;
 		this.password = password;
-		this.tipoAgente = tipoAgente;
+		this.kind = tipoAgente;
 	}
 
 	public String getLogin() {
@@ -38,7 +38,7 @@ public class PeticionInfoREST {
 	}
 	
 	public String getTipoAgente(){
-		return tipoAgente;
+		return kind;
 	}
 
 }
