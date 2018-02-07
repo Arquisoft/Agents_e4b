@@ -9,8 +9,6 @@ import asw.dbManagement.model.Agent;
 public class RespuestaInfoREST {	
 	
 	private String firstName;
-	private String lastName;
-	private int edad;
 	private String ID;
 	private String email;
 	private String direccion;
@@ -39,24 +37,6 @@ public class RespuestaInfoREST {
 	@XmlElement
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	@XmlElement
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	@XmlElement
-	public void setEdad(int edad) {
-		this.edad = edad;
 	}
 
 	public String getID() {
