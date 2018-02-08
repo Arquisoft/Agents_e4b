@@ -476,24 +476,21 @@ public class MainTest {
 								"")));
 	}
 	
-/*	@Test
+	@Test
 	public void emailChangeCorrect() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		
 		String correctChange = "{\"participant\":\"pac@hotmail.com\",\"message\":\"email actualizado correctamente\"}";
-		response = template.postForEntity(userURI, new PeticionChangeEmailREST("paco@hotmail.com", "123456", "pac@hotmail.com"),
-				String.class);
+		response = template.postForEntity(userURI, new PeticionChangeEmailREST("12345678B", "paco@hotmail.com", "123456", "pac@hotmail.com"),String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
 
 		correctChange = "{\"participant\":\"pepe@hotmail.com\",\"message\":\"email actualizado correctamente\"}";
-		response = template.postForEntity(userURI, new PeticionChangeEmailREST("pepe@gmail.com", "123456", "pepe@hotmail.com"),
-				String.class);
+		response = template.postForEntity(userURI, new PeticionChangeEmailREST("87654321B","pepe@gmail.com", "123456", "pepe@hotmail.com"),String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
 
 		correctChange = "{\"participant\":\"fhfyg@hotmail.com\",\"message\":\"email actualizado correctamente\"}";
-		response = template.postForEntity(userURI, new PeticionChangeEmailREST("carmen@yahoo.com", "123456", "fhfyg@hotmail.com"),
-				String.class);
+		response = template.postForEntity(userURI, new PeticionChangeEmailREST("11223344C","carmen@yahoo.com", "123456", "fhfyg@hotmail.com"),String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
 	}
 	
@@ -504,7 +501,7 @@ public class MainTest {
 		String correctPassword = "{\"participant\":\"isabel@gmail.com\",\"message\":\"contraseña actualizada correctamente\"}";
 
 		response = template.postForEntity(userURI,
-				new PeticionChangePasswordREST("isabel@gmail.com", "123456", "djfhr"), String.class);
+				new PeticionChangePasswordREST("22334455D", "isabel@gmail.com", "123456", "djfhr"), String.class);
 		assertThat(response.getBody(), equalTo(correctPassword));
 	}
 	
@@ -522,7 +519,7 @@ public class MainTest {
 		template.setInterceptors(interceptors);
 
 		response = template.postForEntity(userURI,
-				new PeticionChangePasswordREST("isabel@gmail.com", "djfhr", "123456"), String.class);
+				new PeticionChangePasswordREST("22334455D", "isabel@gmail.com", "djfhr", "123456"), String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
 	}
 	
@@ -539,10 +536,10 @@ public class MainTest {
 
 		template.setInterceptors(interceptors);
 
-		response = template.postForEntity(userURI, new PeticionChangeEmailREST("fhfyg@hotmail.com", "123456", "carmen@yahoo.com"),
+		response = template.postForEntity(userURI, new PeticionChangeEmailREST("11223344C","fhfyg@hotmail.com", "123456", "carmen@yahoo.com"),
 				String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
-	}*/
+	}
 
 	// Cabecera HTTP para pedir respuesta en XML
 	public class AcceptInterceptor implements ClientHttpRequestInterceptor {
