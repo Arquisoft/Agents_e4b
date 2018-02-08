@@ -540,6 +540,7 @@ public class MainTest {
 		String userURI = base.toString() + "/";
 
 		response = template.getForEntity(userURI, String.class);
+<<<<<<< HEAD
 		assertThat(
 				response.getBody().replace(" ", "").replace("\n", "")
 						.replace("\t", ""),
@@ -555,6 +556,32 @@ public class MainTest {
 								+ "<tr><td><buttontype="
 								+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>")
 						.replace(" ", "")));
+=======
+		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
+				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
+						+ "<header>" + 
+						"<pre>" + 
+						"  ___                   _       " + 
+						" / _ \\                 | |      " + 
+						"/ /_\\ \\ __ _  ___ _ __ | |_ ___ " + 
+						"|  _  |/ _` |/ _ \\ '_ \\| __/ __|" + 
+						"| | | | (_| |  __/ | | | |_\\__ \\" + 
+						"\\_| |_/\\__, |\\___|_| |_|\\__|___/" + 
+						"        __/ |" + 
+						"       |___/" + 
+						"</pre>" + 
+						"</header>"
+						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"userid\">"
+						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"userid\"name=\"userid\"/>"
+						+ "</td></tr>"
+						+ "<tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
+						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr>"
+						+ "<tr><td><labelfor=\"kind\"><strong>Tipo:</strong></label></td><td>"
+						+ "<inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr>"
+						+ "<tr><td><buttontype="
+						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
+								"")));
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Test
