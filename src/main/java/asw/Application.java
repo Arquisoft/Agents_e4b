@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.AgentRepository;
+import asw.dbManagement.repository.ParticipantRepository;
 
 import java.text.ParseException;
 
@@ -23,7 +23,7 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
+	public CommandLineRunner initDB(ParticipantRepository repository) throws ParseException {
 
 		return (args) -> {
 

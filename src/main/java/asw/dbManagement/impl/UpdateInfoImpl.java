@@ -5,43 +5,43 @@ import org.springframework.stereotype.Service;
 
 import asw.dbManagement.UpdateInfo;
 import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.AgentRepository;
+import asw.dbManagement.repository.ParticipantRepository;
 
 @Service
 public class UpdateInfoImpl implements UpdateInfo {
 
-	private AgentRepository repository;
+	private ParticipantRepository repository;
 	
 	@Autowired
-	public UpdateInfoImpl(AgentRepository repository) {
+	public UpdateInfoImpl(ParticipantRepository repository) {
 		this.repository = repository;
 	}
 	
 	/**
-	 * Método que permite la actualización de la contraseña del Agente
+	 * Método que permite la actualización de la contraseña del Participante
 	 * Se comprueba que las contraseñas no estén vacías, sean distintas y 
-	 * la actual coincida con la del agente
+	 * la actual coincida con la del participante
 	 */
 	@Override
-	public void updatePassword(Agent agent, String password, String newPassword) {
+	public void updatePassword(Agent participant, String password, String newPassword) {
 		
 		if (password != null && newPassword != null && !(password.equals(newPassword))
-				&& agent.getPassword().equals(password)) {
-			agent.setPassword(newPassword);
-			this.repository.save(agent);
+				&& participant.getPassword().equals(password)) {
+			participant.setPassword(newPassword);
+			this.repository.save(participant);
 		}
 		
 	}
 
 	/**
-	 * Método que permite la actualización del email del Agente
+	 * Método que permite la actualización del email del Participante
 	 * Se comprueba que el email no esté vacío
 	 */
 	@Override
-	public void updateEmail(Agent agent, String email) {
+	public void updateEmail(Agent participant, String email) {
 		if(email != null){
-			agent.setEmail(email);
-			this.repository.save(agent);
+			participant.setEmail(email);
+			this.repository.save(participant);
 		}
 	}
 

@@ -17,7 +17,7 @@ public class Agent {
 	@GeneratedValue
 	private Long id;
 
-	// Atributos del agente
+	// Atributos del participante
 	private String nombre;
 	private String apellidos;
 	private String password;
@@ -39,7 +39,7 @@ public class Agent {
 	}
 
 	/**
-	 * Constructor aï¿½o pasado en el se construyen agentes de tipo persona, no tienen el campo tipo ni codigo de tipo
+	 * Constructor año pasado en el se construyen agentes de tipo persona, no tienen el campo tipo ni codigo de tipo
 	 * 
 	 * @param nombre
 	 * @param apellidos
