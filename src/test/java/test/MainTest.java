@@ -170,6 +170,7 @@ public class MainTest {
 		String wrongEmailStyle = "{\"reason\": \"Wrong mail style\"}";
 		response = template.postForEntity(userURI, new PeticionInfoREST("ajsjc", ""), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
+<<<<<<< HEAD
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("jxjsjd@", ""), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
@@ -177,6 +178,15 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionInfoREST("chdgetc@chhsy", ""), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 
+=======
+
+		response = template.postForEntity(userURI, new PeticionInfoREST("jxjsjd@", ""), String.class);
+		assertThat(response.getBody(), equalTo(wrongEmailStyle));
+
+		response = template.postForEntity(userURI, new PeticionInfoREST("chdgetc@chhsy", ""), String.class);
+		assertThat(response.getBody(), equalTo(wrongEmailStyle));
+
+>>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
 		response = template.postForEntity(userURI, new PeticionInfoREST("sjhwuwsc", ""), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}*/
@@ -464,6 +474,7 @@ public class MainTest {
 		response = template.getForEntity(userURI, String.class);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		assertThat(
 				response.getBody().replace(" ", "").replace("\n", "")
 						.replace("\t", ""),
@@ -498,6 +509,10 @@ public class MainTest {
 		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
 				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
 >>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
+=======
+		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
+				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
+>>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
 						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"userid\">"
 						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"userid\"name=\"userid\"/>"
 						+ "</td></tr>"
@@ -509,7 +524,10 @@ public class MainTest {
 						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
 								"")));
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
 =======
 >>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
 	}
