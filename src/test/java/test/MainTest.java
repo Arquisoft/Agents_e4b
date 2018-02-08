@@ -64,7 +64,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T1domainModelEqualsTest() {
+	public void t1domainModelEqualsTest() {
 		Agent participant1 = getParticipant.getParticipant("12345678B");
 		Agent participant2 = getParticipant.getParticipant("12345678555B");
 		Agent participant3 = getParticipant.getParticipant("12345678B");
@@ -77,7 +77,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T2domainModelToString() {
+	public void t2domainModelToString() {
 		Agent participant1 = getParticipant.getParticipant("12345678B");
 		assertEquals(participant1.toString(),
 				"Agent [id=" + participant1.getId() + ", nombre=" + participant1.getNombre() + ", password=" + participant1.getPassword()
@@ -88,24 +88,24 @@ public class MainTest {
 	}
 
 	@Test
-	public void T3domainModelHashCodeTest() {
+	public void t3domainModelHashCodeTest() {
 		Agent participant1 = getParticipant.getParticipant("12345678B");
 		Agent participant3 = getParticipant.getParticipant("12345678B");
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
 	
 	@Test
-	public void T4participantExistAndCorrectPasssword() {
+	public void t4participantExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("12345678B", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
-				"{\"firstName\":\"Paco Gomez\",\"email\":\"paco@hotmail.com\",\"direccion\":\"Calle Uria\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"12345678B\"}"));
+				"{\"firstName\":\"Paco Gomez\",\"email\":\"pac@hotmail.com\",\"direccion\":\"Calle Uria\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"12345678B\"}"));
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
-				"{\"firstName\":\"Pepe Fernandez\",\"email\":\"pepe@gmail.com\",\"direccion\":\"Calle Principal\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"87654321B\"}"));
+				"{\"firstName\":\"Pepe Fernandez\",\"email\":\"pepe@hotmail.com\",\"direccion\":\"Calle Principal\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"87654321B\"}"));
 	
 		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
@@ -114,7 +114,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T5participantDoNotExist() {
+	public void t5participantDoNotExist() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String userNotFound = "{\"reason\": \"User not found\"}";
@@ -127,7 +127,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T6incorrectPassword() {
+	public void t6incorrectPassword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String incorrectPassword = "{\"reason\": \"Password do not match\"}";
@@ -145,7 +145,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T7emptyUser() {
+	public void t7emptyUser() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String emptyUser = "{\"reason\": \"Required user id\"}";
@@ -192,7 +192,7 @@ public class MainTest {
 	}*/
 
 	@Test
-	public void T9emptyPassword() {
+	public void t9emptyPassword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String emptyPassword = "{\"reason\": \"User password is required\"}";
@@ -212,7 +212,7 @@ public class MainTest {
 	
 	
 	@Test
-	public void TemptyKind() {
+	public void tEmptyKind() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String emptyKind = "{\"reason\": \"Kind required\"}";
@@ -232,7 +232,7 @@ public class MainTest {
 	
 
 	@Test
-	public void T10emailRequiredChange() {
+	public void t10emailRequiredChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String emptyEmail = "{\"reason\": \"User email is required\"}";
@@ -248,7 +248,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T12newEmailRequiredChange() {
+	public void t12newEmailRequiredChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String emptyEmail = "{\"reason\": \"User email is required\"}";
@@ -266,7 +266,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T13invalidEmailChange() {
+	public void t13invalidEmailChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String wrongEmailStyle = "{\"reason\": \"Wrong mail style\"}";
@@ -282,7 +282,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T14newInvalidEmailChange() {
+	public void t14newInvalidEmailChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String wrongEmailStyle = "{\"reason\": \"Wrong mail style\"}";
@@ -301,7 +301,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T15emailChangeUserNotFound() {
+	public void t15emailChangeUserNotFound() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String userNotFound = "{\"reason\": \"User not found\"}";
@@ -320,7 +320,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T16sameEmailErrorChange() {
+	public void t16sameEmailErrorChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
 		String sameEmail = "{\"reason\": \"Same email\"}";
@@ -339,7 +339,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T17emailRequiredPasswordChange() {
+	public void t17emailRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String emptyEmail = "{\"reason\": \"User email is required\"}";
@@ -355,7 +355,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T18inValidRequiredPasswordChange() {
+	public void t18inValidRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String wrongEmailStyle = "{\"reason\": \"Wrong mail style\"}";
@@ -372,7 +372,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T19passwordRequiredPasswordChange() {
+	public void t19passwordRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String passwordRequired = "{\"reason\": \"User password is required\"}";
@@ -391,7 +391,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T20newPasswordRequiredPasswordChange() {
+	public void t20newPasswordRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String passwordRequired = "{\"reason\": \"User password is required\"}";
@@ -410,7 +410,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T21samePasswordChange() {
+	public void t21samePasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String passwordRequired = "{\"reason\": \"Password Incorrect\"}";
@@ -429,7 +429,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T22notFoundParticipantPasswordChange() {
+	public void t22notFoundParticipantPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String userNotFound = "{\"reason\": \"User not found\"}";
@@ -448,7 +448,7 @@ public class MainTest {
 	}
 
 	@Test
-	public void T23notSamePasswordChange() {
+	public void t23notSamePasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changePassword";
 		String passwordIncorrect = "{\"reason\": \"Password Incorrect\"}";
@@ -464,72 +464,6 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionChangePasswordREST("carmen@yahoo.com", "dkejd", "dkejd"),
 				String.class);
 		assertThat(response.getBody(), equalTo(passwordIncorrect));
-	}
-
-	@Test
-	public void T24testHtmlController() {
-		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-		String userURI = base.toString() + "/";
-
-		response = template.getForEntity(userURI, String.class);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		assertThat(
-				response.getBody().replace(" ", "").replace("\n", "")
-						.replace("\t", ""),
-				equalTo(new String(
-						"<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
-								+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"userid\">"
-								+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"userid\"name=\"userid\"/>"
-								+ "</td></tr>"
-								+ "<tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
-								+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr>"
-								+ "<tr><td><labelfor=\"kind\"><strong>Tipo:</strong></label></td><td>"
-								+ "<inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr>"
-								+ "<tr><td><buttontype="
-								+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>")
-						.replace(" ", "")));
-=======
-		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
-				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
-						+ "<header>" + 
-						"<pre>" + 
-						"  ___                   _       " + 
-						" / _ \\                 | |      " + 
-						"/ /_\\ \\ __ _  ___ _ __ | |_ ___ " + 
-						"|  _  |/ _` |/ _ \\ '_ \\| __/ __|" + 
-						"| | | | (_| |  __/ | | | |_\\__ \\" + 
-						"\\_| |_/\\__, |\\___|_| |_|\\__|___/" + 
-						"        __/ |" + 
-						"       |___/" + 
-						"</pre>" + 
-						"</header>"
-=======
-		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
-				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
->>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
-=======
-		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
-				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
->>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
-						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"userid\">"
-						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"userid\"name=\"userid\"/>"
-						+ "</td></tr>"
-						+ "<tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
-						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr>"
-						+ "<tr><td><labelfor=\"kind\"><strong>Tipo:</strong></label></td><td>"
-						+ "<inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr>"
-						+ "<tr><td><buttontype="
-						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
-								"")));
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
-=======
->>>>>>> parent of 2fdc892... Arreglado algún error menor en los test y cambiado Participants por
 	}
 	
 	@Test
