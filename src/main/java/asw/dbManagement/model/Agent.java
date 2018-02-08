@@ -32,16 +32,14 @@ public class Agent {
 	private int kindCode;
 
 
-
-
 	/**
-	 * Constructor vacío (ya que es para mapear)
+	 * Constructor vacio (ya que es para mapear)
 	 */
 	Agent() {
 	}
 
 	/**
-	 * Constructor año pasado en el se construyen agentes de tipo persona, no tienen el campo tipo ni codigo de tipo
+	 * Constructor a�o pasado en el se construyen agentes de tipo persona, no tienen el campo tipo ni codigo de tipo
 	 * 
 	 * @param nombre
 	 * @param apellidos
@@ -87,11 +85,7 @@ public class Agent {
 		this.direccion = direccion;
 		this.kindCode = kindCode;
 		this.kind = kind;
-
-		
 	}
-
-
 
 	public Long getId() {
 		return id;

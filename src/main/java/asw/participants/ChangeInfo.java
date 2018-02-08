@@ -8,7 +8,7 @@ import asw.participants.webService.responses.RespuestaChangeInfoREST;
 
 public interface ChangeInfo {
 	/**
-	 * Cambio de contraseÃ±a
+	 * Cambio de contraseña
 	 *
 	 * @param datos requeridos (email, password, newPassword)
 	 * @return 

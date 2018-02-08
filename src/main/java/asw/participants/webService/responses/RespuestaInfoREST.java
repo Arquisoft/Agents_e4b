@@ -14,6 +14,9 @@ public class RespuestaInfoREST {
 	private String direccion;
 	private String kind;
 	private int kindCode;
+	
+	
+	
 	public RespuestaInfoREST() {}
 	
 	public RespuestaInfoREST(Agent agent){
@@ -26,8 +29,6 @@ public class RespuestaInfoREST {
 	}
 	
 	
-
-
 	public String getFirstName() {
 		return firstName;
 	}
@@ -58,6 +59,7 @@ public class RespuestaInfoREST {
 	public String getDireccion() {
 		return direccion;
 	}
+	
 	@XmlElement
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
@@ -66,6 +68,7 @@ public class RespuestaInfoREST {
 	public String getKind() {
 		return kind;
 	}
+	
 	@XmlElement
 	public void setKind(String kind) {
 		this.kind = kind;
@@ -74,6 +77,7 @@ public class RespuestaInfoREST {
 	public int getKindCode() {
 		return kindCode;
 	}
+	
 	@XmlElement
 	public void setKindCode(int kindCode) {
 		this.kindCode = kindCode;

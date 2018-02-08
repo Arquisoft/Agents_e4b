@@ -8,8 +8,4 @@ public interface GetParticipant {
 	 */
 	public Agent getParticipant(String identificador);
 	
-	
-	
-	
-	
 }

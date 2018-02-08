@@ -94,7 +94,7 @@ public class MainTest {
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
 	
-/*	@Test
+	@Test
 	public void T4participantExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
@@ -142,7 +142,7 @@ public class MainTest {
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("22334455D", "234522222226","Person"), String.class);
 		assertThat(response.getBody(), equalTo(incorrectPassword));
-	}*/
+	}
 
 	@Test
 	public void T7emptyUser() {
@@ -162,7 +162,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(emptyUser));
 	}
 /*	
-	//El identifcador no  es incorrecto en principio (?)
+	//Ya no se usa el email como usuario, se usa el DNI (Identificador)
 	@Test
 	public void T8invalidEmail() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -201,13 +201,13 @@ public class MainTest {
 	}
 	
 	
-/*	@Test
+	@Test
 	public void TemptyKind() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String emptyKind = "{\"reason\": \"Kind required\"}";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("12345678B", "123456",""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("12345678B", "123456", ""), String.class);
 		assertThat(response.getBody(), equalTo(emptyKind));
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "123456", ""), String.class);
@@ -218,7 +218,7 @@ public class MainTest {
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("22334455D", "123456",""), String.class);
 		assertThat(response.getBody(), equalTo(emptyKind));
-	}*/
+	}
 	
 
 	@Test

@@ -32,8 +32,7 @@ public class GetParticipantInfoRESTController implements GetParticipantInfo {
 		Assert.isUserIdEmpty(peticion.getLogin());
 	//	Assert.isEmailValid(peticion.getLogin());
 		Assert.isPasswordEmpty(peticion.getPassword());
-		
-		Assert.isKindEmpty(peticion.getTipoAgente());
+		Assert.isKindEmpty(peticion.getKind());
 
 		Agent participant = getParticipant.getParticipant(peticion.getLogin());
 

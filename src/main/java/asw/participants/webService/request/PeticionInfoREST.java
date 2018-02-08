@@ -6,27 +6,25 @@ public class PeticionInfoREST {
 	private String password;
 	private String kind;
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public PeticionInfoREST() {
-
-	}
+	public PeticionInfoREST() { }
 	
 	public PeticionInfoREST(String login,String password){
 		this.login = login;
 		this.password = password;
 	}
 	
-	public PeticionInfoREST(String login, String password, String tipoAgente){
+	public PeticionInfoREST(String login, String password, String kind){
 		this.login = login;
 		this.password = password;
-		this.kind = tipoAgente;
+		this.kind = kind;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getLogin() {
@@ -37,7 +35,7 @@ public class PeticionInfoREST {
 		return password;
 	}
 	
-	public String getTipoAgente(){
+	public String getKind(){
 		return kind;
 	}
 
