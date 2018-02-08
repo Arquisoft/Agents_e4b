@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/Arquisoft/Agents_e4b.svg?branch=master)](https://travis-ci.org/Arquisoft/Agents_e4b)
 
+
 Skeleton of agents module
 
 # Authors
@@ -19,39 +20,60 @@ Skeleton of agents module
 - Francisco Manuel Mendoza Soto (UO251129)
 - Victor David Acebes Caballo (UO251117)
 
+# Descripción
 
-Usuarios de prueba para la aplicación:
+Agents es una aplicación elaborada para la asignatura Arquitectura del Software de la Escuela de Ingeniería informática de la Universidad de Oviedo.
+<br>
+La función de Agents es la de permitir el manejo de información de diversos agentes almacenados en el sistema. Por ahora, el sistema maneja agentes de tres tipos distintos: Usuarios, entidades, y sensores.
+Agents busca ofrecer a sus usuarios una forma simple y sencilla para acceder a sus datos registrados, así como para cambiarlos siempre que lo deseen. Para esto proporciona una minimalista interfaz de usuario.
+<br>
+Si desea probar Agents, siga leyendo para obtener las instrucciones de compilación y ejecución.
 
-- Email: paco@hotmail.com
-  Contraseña: 123456
-  Nombre: Paco Gómez
-  Fecha de nacimiento: 08/16/1970
-  DNI: 12345678A
-  Dirección: Calle Uría
-  Nacionalidad: Española
+# Como ejecutar
+Para ejecutar la aplicación hace falta tener maven correctamente instalado, se puede instalar siguiendo estas instrucciones en caso de no tenerlo: https://www.mkyong.com/maven/how-to-install-maven-in-windows/ 
+Una vez instalado, ejecutar en el cmd el comando "mvn --version" para comprobar que la instalación ha sido correcta.
+<br>
+Tras comprobarlo, aseguraros de clonar el proyecto en vuestro ordenador, y situaros en el cmd en esa en la raiz del proyecto, es decir donde se pueden ver las carpetas src, cartas, bin... una vez situados, ejecutad el comando "mvn spring-boot:run". Esto pondrá en ejecución el programa.
+Otra posibilidad es realizar la ejecución mediante un entorno de desarrollo como Eclipse, importando el proyecto maven, en vez de usar la venta de comandos.
+<br>
+Una vez tengáis en ejecución la aplicación, deberéis acceder a la dirección http://localhost:8080/ con vuestro navegador preferido y observaréis la pantalla de login. Para poder acceder a los datos de un usuario, podéis ver algunos de los usuarios de prueba más abajo. En este caso, el usuario siempre es el DNI. Por ejemplo, para ver los datos de Paco Gómez, introducid el usuario 12345678A, la contraseña 123456 y el tipo Person.
 
-- Email: pepe@gmail.com
- Contraseña: 123456
+# Usuarios de prueba para la aplicación
+
+- Email: paco@hotmail.com <br>
+  Contraseña: 123456 <br>
+  Nombre: Paco Gómez <br>
+  Fecha de nacimiento: 08/16/1970 <br>
+  DNI: 12345678A <br>
+  Dirección: Calle Uría <br>
+  Nacionalidad: Española <br>
+  Kind: Person  <br>
+
+- Email: pepe@gmail.com <br>
+ Contraseña: 123456 <br>
  Nombre: Pepe Fernández
- Fecha de nacimiento: 02/23/1975
- DNI: 87654321B
- Dirección: Calle Principal
- Nacionalidad: Española
+ Fecha de nacimiento: 02/23/1975 <br>
+ DNI: 87654321B <br>
+ Dirección: Calle Principal <br>
+ Nacionalidad: Española <br>
+ Kind: Person  <br>
 
-- Email: carmen@yahoo.com
- Contraseña: 123456
- Nombre: Carmen López
- Fecha de nacimiento: 08/16/1970
- DNI: 11223344C
- Dirección: Calle Calvo Sotelo
- Nacionalidad: Española
+- Email: carmen@yahoo.com <br>
+ Contraseña: 123456 <br>
+ Nombre: Carmen López <br>
+ Fecha de nacimiento: 08/16/1970 <br>
+ DNI: 11223344C <br>
+ Dirección: Calle Calvo Sotelo <br>
+ Nacionalidad: Española <br>
+ Kind: Person  <br>
 
-- Email: isabel@gmail.com
- Contraseña: 123456
- Nombre: Isabel Rodríguez
- Fecha de nacimiento: 02/23/1975
- DNI: 22334455D
- Dirección: Avenida Galicia
- Nacionalidad: Española
+- Email: isabel@gmail.com <br>
+ Contraseña: 123456 <br>
+ Nombre: Isabel Rodríguez <br>
+ Fecha de nacimiento: 02/23/1975 <br>
+ DNI: 22334455D <br>
+ Dirección: Avenida Galicia <br>
+ Nacionalidad: Española <br>
+ Kind: Person  <br>
 
 
