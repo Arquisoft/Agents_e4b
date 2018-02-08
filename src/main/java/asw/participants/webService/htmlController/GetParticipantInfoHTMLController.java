@@ -33,7 +33,7 @@ public class GetParticipantInfoHTMLController {
 			Model model) {
 
 		Assert.isUserIdEmpty(userid);
-		//Assert.isEmailValid(email);
+		//Assert.isEmailValid(userid);
 		Assert.isPasswordEmpty(password);
 		Assert.isKindEmpty(kind);
 

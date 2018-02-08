@@ -93,20 +93,21 @@ public class MainTest {
 		Agent participant3 = getParticipant.getParticipant("12345678B");
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
-	@Test
+	
+/*	@Test
 	public void T4participantExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("12345678B", "123456","Person"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("12345678B", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"firstName\":\"Paco Gomez\",\"email\":\"paco@hotmail.com\",\"direccion\":\"Calle Uria\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"12345678B\"}"));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "123456","Person"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"firstName\":\"Pepe Fernandez\",\"email\":\"pepe@gmail.com\",\"direccion\":\"Calle Principal\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"87654321B\"}"));
 	
-		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "123456","Person"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"firstName\":\"Carmen Lopez\",\"email\":\"carmen@yahoo.com\",\"direccion\":\"Calle Calvo Sotelo\",\"kind\":\"Person\",\"kindCode\":1,\"id\":\"11223344C\"}"));
 		
@@ -118,11 +119,10 @@ public class MainTest {
 		String userURI = base.toString() + "/user";
 		String userNotFound = "{\"reason\": \"User not found\"}";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("136543654E", "ajksdkje","Person"),
-				String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("136543654E", "ajksdkje", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(userNotFound));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("66666666X", "shcxhqw","Person"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("66666666X", "shcxhqw", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(userNotFound));
 	}
 
@@ -142,7 +142,7 @@ public class MainTest {
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("22334455D", "234522222226","Person"), String.class);
 		assertThat(response.getBody(), equalTo(incorrectPassword));
-	}
+	}*/
 
 	@Test
 	public void T7emptyUser() {
@@ -161,8 +161,8 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionInfoREST("", "hhh","Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyUser));
 	}
-
-	/* El identifcador no  es incorrecto en principio (?)
+/*	
+	//El identifcador no  es incorrecto en principio (?)
 	@Test
 	public void T8invalidEmail() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -201,7 +201,7 @@ public class MainTest {
 	}
 	
 	
-	@Test
+/*	@Test
 	public void TemptyKind() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
@@ -218,12 +218,10 @@ public class MainTest {
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("22334455D", "123456",""), String.class);
 		assertThat(response.getBody(), equalTo(emptyKind));
-	}
-	
-	
+	}*/
 	
 
-/*	@Test
+	@Test
 	public void T10emailRequiredChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
@@ -466,15 +464,19 @@ public class MainTest {
 		response = template.getForEntity(userURI, String.class);
 		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
 				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
-						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"email\">"
-						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"email\"name=\"email\"/>"
-						+ "</td></tr><tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
-						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr><tr><td><buttontype="
+						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"userid\">"
+						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"userid\"name=\"userid\"/>"
+						+ "</td></tr>"
+						+ "<tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
+						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr>"
+						+ "<tr><td><labelfor=\"kind\"><strong>Tipo:</strong></label></td><td>"
+						+ "<inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr>"
+						+ "<tr><td><buttontype="
 						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
 								"")));
 	}
 	
-	@Test
+/*	@Test
 	public void emailChangeCorrect() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/changeEmail";
@@ -540,7 +542,7 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionChangeEmailREST("fhfyg@hotmail.com", "123456", "carmen@yahoo.com"),
 				String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
-	}
+	}*/
 
 	// Cabecera HTTP para pedir respuesta en XML
 	public class AcceptInterceptor implements ClientHttpRequestInterceptor {
@@ -551,5 +553,5 @@ public class MainTest {
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_XML));
 			return execution.execute(request, body);
 		}
-	}*/
+	}
 }

@@ -23,8 +23,6 @@ public class RespuestaInfoREST {
 		setDireccion(agent.getDireccion());
 		setKind(agent.getKind());
 		setKindCode(agent.getKindCode());
-		
-
 	}
 	
 	
