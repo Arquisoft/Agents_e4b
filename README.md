@@ -35,7 +35,7 @@ Una vez instalado, ejecutar en el cmd el comando "mvn --version" para comprobar 
 Tras comprobarlo, aseguraros de clonar el proyecto en vuestro ordenador, y situaros en el cmd en esa en la raiz del proyecto, es decir donde se pueden ver las carpetas src, cartas, bin... una vez situados, ejecutad el comando "mvn spring-boot:run". Esto pondrá en ejecución el programa.<br>
 Otra posibilidad es realizar la ejecución mediante un entorno de desarrollo como Eclipse, importando el proyecto maven, en vez de usar la venta de comandos.
 <br><br>
-Una vez tengáis en ejecución la aplicación, deberéis acceder a la dirección http://localhost:8080/ con vuestro navegador preferido y observaréis la pantalla de login. Para poder acceder a los datos de un usuario, podéis ver algunos de los usuarios de prueba más abajo. En este caso, el usuario siempre es el DNI. Por ejemplo, para ver los datos de Paco Gómez, introducid el usuario 12345678A, la contraseña 123456 y el tipo Person.
+Una vez tengáis en ejecución la aplicación, deberéis acceder a la dirección http://localhost:8080/ con vuestro navegador preferido y observaréis la pantalla de login. Para poder acceder a los datos de un usuario, podéis ver algunos de los usuarios de prueba más abajo. En este caso, el usuario siempre es el DNI. Por ejemplo, para ver los datos de Paco Gómez, introducid el usuario 12345678B, la contraseña 123456 y el tipo Person.
 
 # Usuarios de prueba para la aplicación
 
@@ -43,7 +43,7 @@ Una vez tengáis en ejecución la aplicación, deberéis acceder a la dirección
   Contraseña: 123456 <br>
   Nombre: Paco Gómez <br>
   Fecha de nacimiento: 08/16/1970 <br>
-  DNI: 12345678A <br>
+  DNI: 12345678B <br>
   Dirección: Calle Uría <br>
   Nacionalidad: Española <br>
   Kind: Person  <br>
