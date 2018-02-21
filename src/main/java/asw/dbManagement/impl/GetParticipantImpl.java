@@ -5,16 +5,16 @@ import org.springframework.stereotype.Service;
 
 import asw.dbManagement.GetParticipant;
 import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.ParticipantRepository;
+import asw.dbManagement.repository.AgentsRepository;
 
 
 @Service
 public class GetParticipantImpl implements GetParticipant {
 	
-	private ParticipantRepository repository;
+	private AgentsRepository repository;
 	
 	@Autowired
-	public GetParticipantImpl(ParticipantRepository repository) {
+	public GetParticipantImpl(AgentsRepository repository) {
 		this.repository = repository;
 	}
 	
